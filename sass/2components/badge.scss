@@ -1,0 +1,29 @@
+
+.badge-dot {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    vertical-align: middle;
+    background-color: var(--c-black);
+}
+.badge{
+    .rounded-circle{
+        width: 8px;
+        height: 8px;
+    }
+}
+.bg-label-danger {
+    background-color: #ffe2e3 !important;
+    color: #ff4c51 !important;
+}
+.bg-label-warning {
+    background-color: #fff0e1 !important;
+    color: #ff9f43 !important;
+}
+.bg-label-success {
+    background-color: #ddf6e8 !important;
+    color: #28c76f !important;
+}

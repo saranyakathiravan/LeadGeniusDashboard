@@ -1,0 +1,42 @@
+.btn{
+    display: flex !important;
+    align-items: center !important;
+    height: 40px !important;
+    gap: 8px;
+    .iconBlock{
+        margin: 0 !important;
+        display: flex;
+        svg{
+            width: 20px;
+            height: 20px;
+        }
+    }
+    .iconContent{
+        white-space: nowrap;
+    }
+    &.btnPrimary{
+        background: var(--c-black);
+        color: var(--c-white);
+        border: 1px solid var(--c-black);
+        svg{
+            fill: var(--c-white);
+        }
+        &:hover{
+            opacity: 0.7;
+            background: var(--c-black);
+            color: var(--c-white);
+        }
+    }
+    &.btnOutline{
+        background-color: var(--c-white);
+        border: 1px solid var(--c-black);
+        &:hover{
+            color: var(--c-white);
+            background: var(--c-black);
+            svg{
+                fill: var(--c-white);
+            }
+        }
+
+    }
+}

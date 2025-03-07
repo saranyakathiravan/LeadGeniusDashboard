@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en" data-template="vertical-menu-template">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Lead Genius</title>
+  </head>
+  <body>
+    <main>
+      <!-- sidebar -->
+      <aside class="mainSideBar customScrollBar">
+        <div class="mainSideBarPanel">
+            <div class="sideBarTopBlock">
+              <div class="sideBardLogoPanel">
+                <div class="logoMain">
+                  <a  class="logoLink">
+                    <span class="logo w-100">
+                      <img src="./images/logoImg.png" class="w-100 logoText" alt="">
+                    </span>
+                  </a>
+                </div>
+                <div class="layout-menu-toggle d-xl-none " onClick="navLoad()">
+                  <a class="p-0 d-flex me-xl-4" >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">
+                      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                      <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="sideBarMenuBlock d-flex flex-column">
+              <div class="sideBarMenuList ">
+                <div class="sideBarToggleParent active" id="dashboardSettings">
+                  <div class="menuList">
+                    <div class="menuList-header active" id="dashboardSettingsHeading" >
+                        <a class="menu-link d-flex align-items-center justify-content-between" data-bs-toggle="collapse" role="button" href="#dashboardCollapse" aria-expanded="false" aria-controls="dashboardCollapse">
+                          <div class="d-flex gap-2 align-items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor"  viewBox="0 0 17 17">
+                              <path d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5z"/>
+                            </svg>
+                            <div >Dashboard</div>
+                          </div>
+                          <div class="badge bg-danger rounded-pill ms-auto">5</div>
+                          <svg class="leftSideBarIcons arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32">
+                            <path xmlns="http://www.w3.org/2000/svg" d="M7 10.5a1 1 0 0 1 .707.293L16 19.086l8.293-8.293a1 1 0 0 1 1.414 1.414L16 21.914l-9.707-9.707A1 1 0 0 1 7 10.5Z"/>
+                          </svg>
+                        </a>
+                    </div>
+                    <div id="dashboardCollapse" class="collapse " style="">
+                      <div class="MenuList-body">
+                          <a class="menuBarList hoverBlock childMenuList active" href="">
+                              <figure class="menuBarListIcon">
+                                  <svg class="leftSideBarIcons childMenuIcon" xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" width="32" height="32" viewBox="0 0 32 32">
+                                    <path xmlns="http://www.w3.org/2000/svg" d="M16 25a9 9 0 1 1 9-9 9.011 9.011 0 0 1-9 9Zm0-16a7 7 0 1 0 7 7 7.008 7.008 0 0 0-7-7Z"/>
+                                  </svg>
+                              </figure>
+                              <span class="menuBarListLabel">Analytics</span>
+                          </a>  
+                          <a class="menuBarList hoverBlock childMenuList " href="">
+                            <figure class="menuBarListIcon">
+                                <svg class="leftSideBarIcons childMenuIcon" xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" width="32" height="32" viewBox="0 0 32 32">
+                                  <path xmlns="http://www.w3.org/2000/svg" d="M16 25a9 9 0 1 1 9-9 9.011 9.011 0 0 1-9 9Zm0-16a7 7 0 1 0 7 7 7.008 7.008 0 0 0-7-7Z"/>
+                                </svg>
+                            </figure>
+                            <span class="menuBarListLabel">CRM</span>
+                          </a> 
+                          <a class="menuBarList hoverBlock childMenuList " href="">
+                            <figure class="menuBarListIcon">
+                                <svg class="leftSideBarIcons childMenuIcon" xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" width="32" height="32" viewBox="0 0 32 32">
+                                  <path xmlns="http://www.w3.org/2000/svg" d="M16 25a9 9 0 1 1 9-9 9.011 9.011 0 0 1-9 9Zm0-16a7 7 0 1 0 7 7 7.008 7.008 0 0 0-7-7Z"/>
+                                </svg>
+                            </figure>
+                            <span class="menuBarListLabel">eCommerce</span>
+                          </a> 
+                          <a class="menuBarList hoverBlock childMenuList " href="">
+                            <figure class="menuBarListIcon">
+                                <svg class="leftSideBarIcons childMenuIcon" xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" width="32" height="32" viewBox="0 0 32 32">
+                                  <path xmlns="http://www.w3.org/2000/svg" d="M16 25a9 9 0 1 1 9-9 9.011 9.011 0 0 1-9 9Zm0-16a7 7 0 1 0 7 7 7.008 7.008 0 0 0-7-7Z"/>
+                                </svg>
+                            </figure>
+                            <span class="menuBarListLabel">Logistics</span>
+                          </a> 
+                          <a class="menuBarList hoverBlock childMenuList " href="">
+                            <figure class="menuBarListIcon">
+                                <svg class="leftSideBarIcons childMenuIcon" xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" width="32" height="32" viewBox="0 0 32 32">
+                                  <path xmlns="http://www.w3.org/2000/svg" d="M16 25a9 9 0 1 1 9-9 9.011 9.011 0 0 1-9 9Zm0-16a7 7 0 1 0 7 7 7.008 7.008 0 0 0-7-7Z"/>
+                                </svg>
+                            </figure>
+                            <span class="menuBarListLabel">Academy</span>
+                          </a>                         
+                      </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+              <div class="sideBarMenuList ">
+                <div class="sideBarToggleParent">
+                  <div class="menuList">
+                    <div class="menuList-header ">
+                        <a class="menu-link d-flex align-items-center justify-content-between"> 
+                          <div class="d-flex gap-2 align-items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi bi-layers" viewBox="0 0 17 17">
+                              <path d="M8.235 1.559a.5.5 0 0 0-.47 0l-7.5 4a.5.5 0 0 0 0 .882L3.188 8 .264 9.559a.5.5 0 0 0 0 .882l7.5 4a.5.5 0 0 0 .47 0l7.5-4a.5.5 0 0 0 0-.882L12.813 8l2.922-1.559a.5.5 0 0 0 0-.882zm3.515 7.008L14.438 10 8 13.433 1.562 10 4.25 8.567l3.515 1.874a.5.5 0 0 0 .47 0zM8 9.433 1.562 6 8 2.567 14.438 6z"/>
+                            </svg>
+                            <div >Leads</div>
+                          </div>
+                        </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="sideBarMenuList ">
+                <div class="sideBarToggleParent">
+                  <div class="menuList">
+                    <div class="menuList-header ">
+                        <a class="menu-link d-flex align-items-center justify-content-between"> 
+                          <div class="d-flex gap-2 align-items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi bi-calendar-date" viewBox="0 0 17 17">
+                              <path d="M6.445 11.688V6.354h-.633A13 13 0 0 0 4.5 7.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23"/>
+                              <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z"/>
+                            </svg>
+                            <div >Calender</div>
+                          </div>
+                        </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="sideBarMenuList ">
+                <div class="sideBarToggleParent">
+                  <div class="menuList">
+                    <div class="menuList-header ">
+                        <a class="menu-link d-flex align-items-center justify-content-between"> 
+                          <div class="d-flex gap-2 align-items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi bi-flag" viewBox="0 0 17 17">
+                              <path d="M14.778.085A.5.5 0 0 1 15 .5V8a.5.5 0 0 1-.314.464L14.5 8l.186.464-.003.001-.006.003-.023.009a12 12 0 0 1-.397.15c-.264.095-.631.223-1.047.35-.816.252-1.879.523-2.71.523-.847 0-1.548-.28-2.158-.525l-.028-.01C7.68 8.71 7.14 8.5 6.5 8.5c-.7 0-1.638.23-2.437.477A20 20 0 0 0 3 9.342V15.5a.5.5 0 0 1-1 0V.5a.5.5 0 0 1 1 0v.282c.226-.079.496-.17.79-.26C4.606.272 5.67 0 6.5 0c.84 0 1.524.277 2.121.519l.043.018C9.286.788 9.828 1 10.5 1c.7 0 1.638-.23 2.437-.477a20 20 0 0 0 1.349-.476l.019-.007.004-.002h.001M14 1.221c-.22.078-.48.167-.766.255-.81.252-1.872.523-2.734.523-.886 0-1.592-.286-2.203-.534l-.008-.003C7.662 1.21 7.139 1 6.5 1c-.669 0-1.606.229-2.415.478A21 21 0 0 0 3 1.845v6.433c.22-.078.48-.167.766-.255C4.576 7.77 5.638 7.5 6.5 7.5c.847 0 1.548.28 2.158.525l.028.01C9.32 8.29 9.86 8.5 10.5 8.5c.668 0 1.606-.229 2.415-.478A21 21 0 0 0 14 7.655V1.222z"/>
+                            </svg>
+                            <div >Reporting</div>
+                          </div>
+                        </a>
+                    </div>
+                  </div>
+                </div>
+              </div>  
+              <div class="sideBarMenuList ">
+                <div class="sideBarToggleParent">
+                  <div class="menuList">
+                    <div class="menuList-header " id="dashboardSettings">
+                        <a class="menu-link d-flex align-items-center justify-content-between" data-bs-toggle="collapse" href="#eCommerceCollapse" aria-expanded="false" aria-controls="eCommerceCollapse"  role="button"> 
+                          <div class="d-flex gap-2 align-items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi bi-people" viewBox="0 0 17 17">
+                              <path d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1zm-7.978-1L7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002-.014.002zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4m3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0M6.936 9.28a6 6 0 0 0-1.23-.247A7 7 0 0 0 5 9c-4 0-5 3-5 4q0 1 1 1h4.216A2.24 2.24 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816M4.92 10A5.5 5.5 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0m3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4"/>
+                            </svg>
+                            <div >Users</div>
+                          </div>
+                          <svg class="leftSideBarIcons arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32">
+                            <path xmlns="http://www.w3.org/2000/svg" d="M7 10.5a1 1 0 0 1 .707.293L16 19.086l8.293-8.293a1 1 0 0 1 1.414 1.414L16 21.914l-9.707-9.707A1 1 0 0 1 7 10.5Z"/>
+                          </svg>
+                        </a>
+                    </div>
+                    <div id="eCommerceCollapse" class="collapse " style=""></div>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-auto">
+                <div class="sideBarMenuList ">
+                  <div class="sideBarToggleParent">
+                    <div class="menuList">
+                      <div class="menuList-header " id="dashboardSettings">
+                          <a class="menu-link d-flex align-items-center justify-content-between" data-bs-toggle="collapse" href="#logisticsCollapse" aria-expanded="false" aria-controls="logisticsCollapse"  role="button"> 
+                            <div class="d-flex gap-2 align-items-center">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi bi-bar-chart" viewBox="0 0 17 17">
+                                <path d="M4 11H2v3h2zm5-4H7v7h2zm5-5v12h-2V2zm-2-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM6 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm-5 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1z"/>
+                              </svg>
+                              <div >Support</div>
+                            </div>
+                            <svg class="leftSideBarIcons arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32">
+                              <path xmlns="http://www.w3.org/2000/svg" d="M7 10.5a1 1 0 0 1 .707.293L16 19.086l8.293-8.293a1 1 0 0 1 1.414 1.414L16 21.914l-9.707-9.707A1 1 0 0 1 7 10.5Z"/>
+                            </svg>
+                          </a>
+                      </div>
+                      <div id="logisticsCollapse" class="collapse " style=""></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="sideBarMenuList ">
+                  <div class="sideBarToggleParent">
+                    <div class="menuList">
+                      <div class="menuList-header " id="dashboardSettings">
+                          <a class="menu-link d-flex align-items-center justify-content-between" > 
+                            <div class="d-flex gap-2 align-items-center">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi bi-gear" viewBox="0 0 17 17">
+                                <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492M5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0"/>
+                                <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115z"/>
+                              </svg>
+                              <div >Settings</div>
+                            </div>
+                          </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- used Space Details -->
+                <div class="usedSpace">
+                  <div class="progress-bar">
+                    <progress value="75" min="0" max="100" style="visibility:hidden;height:0;width:0;">75%</progress>
+                  </div>
+                  <div class="usedSpaceText">
+                    <div class="para">
+                      <div class="uSpan">Used space</div>
+                      <div class="uPara">Your team has used 80%of your available space. Need more?</div>
+                    </div>
+                    <div class="buttonBlock">
+                      <a class="cursor-pointer">Dismiss</a>
+                      <a>Upgrade plan</a>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Logout Block -->
+                 <div class="logoutBlock">
+                  <div class="profileBlock">
+                    <img class="profileImg" src="./images/navprofile.jpg" alt="">
+                  </div>
+                  <div class="userDetails">
+                    <div class="nameDet">Olivia Rhye</div>
+                    <div class="emailDet">olivia@untitledui.com</div>
+                  </div>
+                  <div class="logoutIcon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"/>
+                      <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
+                    </svg>
+                  </div>
+                 </div>
+              </div>
+            </div>
+        </div>
+      </aside>
+      <!-- main panel -->
+      <section class="mainContentWrapper page-with-super-sidebar d-flex flex-column">
+        <!-- Center Top section -->
+         <section class="centerTopMain">
+           <div class="centerTop">
+             <div class="contentSection">
+                <div class="layout-menu-toggle navbar-nav align-items-xl-center me-2  me-xl-0   d-xl-none " onClick="navLoad()">
+                  <a class="nav-item nav-link p-0 d-flex me-xl-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"class="bi bi-list" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+                    </svg>
+                  </a>
+                </div>
+                <div class="content">
+                  <h1 class="heading">Welcome back, Olivia</h1>
+                  <p class="subheading">Track, manage and forecast your customers and orders.</p>
+                </div>
+            </div>
+            <div class="buttonSection">
+              <button class="btn btnPrimary">
+                <figure class="iconBlock">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                  <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
+                  </svg>
+                </figure>
+                <span class="iconContent">Add Widgets</span>
+              </button>
+              <button class="btn btnOutline">
+                <figure class="iconBlock">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+                    <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325"/>
+                  </svg>
+                </figure>
+                <span class="iconContent">Edit Widgets</span>
+              </button>
+            </div>
+           </div>
+         </section>
+         <!-- analytics -->
+          <section class="content-wrapper">
+            <div class="container-xxl flex-grow-1 analyticsMain p-0 m-4 mt-0">
+              <div class="row g-6">
+                <div class="col-xl-3 col-sm-6">
+                  <div class="card h-100">
+                    <div class="card-header text-center pb-0">
+                      <h2 class="mb-0 card-count">1026</h2>
+                      <p class=" card-title">Total Leads</p>
+                      <h5 class="mb-0  text-success">+ 112.71%</h5>
+                    </div>
+                    <div class="card-body px-0" style="position: relative;">
+                      <div id="averageDailySales">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-3 col-sm-6">
+                  <div class="card h-100">
+                    <div class="card-header text-center pb-0">
+                      <h2 class="mb-0 card-count">459</h2>
+                      <p class=" card-title">New Leads</p>
+                      <h5 class="mb-0  text-success">+ 112.71%</h5>
+                    </div>
+                    <div class="card-body px-0" style="position: relative;">
+                      <div id="averageDailySales">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-3 col-sm-6">
+                  <div class="card h-100">
+                    <div class="card-header text-center pb-0">
+                      <h2 class="mb-0 card-count">217</h2>
+                      <p class=" card-title">In-progress Leads</p>
+                      <h5 class="mb-0  text-success">+ 112.71%</h5>
+                    </div>
+                    <div class="card-body px-0" style="position: relative;">
+                      <div id="averageDailySales">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-3 col-sm-6">
+                  <div class="card h-100">
+                    <div class="card-header text-center pb-0">
+                      <h2 class="mb-0 card-count">69.9%</h2>
+                      <p class=" card-title">User Reach</p>
+                      <h5 class="mb-0  text-success">+ 112.71%</h5>
+                    </div>
+                    <div class="card-body px-0" style="position: relative;">
+                      <div id="averageDailySales">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="col-lg-4 ">
+                  <div class="card mb-2">
+                    <div class="card-body d-flex justify-content-between">
+                      <div class="card-title titleSimilar mb-0">
+                        <h5 class="mb-0">Required action impacting leads</h5>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card cardChilds mb-2">
+                    <div class="card-header pb-0 d-flex justify-content-between">
+                      <div class="card-title mb-0">
+                        <h6 class="mb-2">High Potential Lead</h6>
+                      </div>
+                    </div>
+                    <div class="card-body pt-0 d-flex justify-content-between ">
+                      <div>
+                        <p class="card-subtitle">Lead Name: Kelly Casper</p>
+                        <p class="card-subtitle">Course: Digital Marketing</p>
+                        <p class="card-subtitle">Last Contacted: 22/04/2024</p>
+                      </div>
+                      <div class="">
+                        <span class="badge d-flex align-items-center gap-1 rounded bg-label-danger">
+                          <span class=" bg-danger border border-light rounded-circle"></span>
+                          High
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card cardChilds mb-2">
+                    <div class="card-header pb-0 d-flex justify-content-between">
+                      <div class="card-title mb-0">
+                        <h6 class="mb-2">High Potential Lead</h6>
+                      </div>
+                    </div>
+                    <div class="card-body pt-0 d-flex justify-content-between ">
+                      <div>
+                        <p class="card-subtitle">Lead Name: Kelly Casper</p>
+                        <p class="card-subtitle">Course: Digital Marketing</p>
+                        <p class="card-subtitle">Last Contacted: 22/04/2024</p>
+                      </div>
+                      <div class="">
+                        <span class="badge d-flex align-items-center gap-1 rounded bg-label-danger">
+                          <span class=" bg-danger border border-light rounded-circle"></span>
+                          High
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card cardChilds mb-2">
+                    <div class="card-header pb-0 d-flex justify-content-between">
+                      <div class="card-title mb-0">
+                        <h6 class="mb-2">High Potential Lead</h6>
+                      </div>
+                    </div>
+                    <div class="card-body pt-0 d-flex justify-content-between ">
+                      <div>
+                        <p class="card-subtitle">Lead Name: Kelly Casper</p>
+                        <p class="card-subtitle">Course: Digital Marketing</p>
+                        <p class="card-subtitle">Last Contacted: 22/04/2024</p>
+                      </div>
+                      <div class="">
+                        <span class="badge d-flex align-items-center gap-1 rounded bg-label-danger">
+                          <span class=" bg-danger border border-light rounded-circle"></span>
+                          High
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card cardChilds mb-2">
+                    <div class="card-header pb-0 d-flex justify-content-between">
+                      <div class="card-title mb-0">
+                        <h6 class="mb-2">High Potential Lead</h6>
+                      </div>
+                    </div>
+                    <div class="card-body pt-0 d-flex justify-content-between ">
+                      <div>
+                        <p class="card-subtitle">Lead Name: Kelly Casper</p>
+                        <p class="card-subtitle">Course: Digital Marketing</p>
+                        <p class="card-subtitle">Last Contacted: 22/04/2024</p>
+                      </div>
+                      <div class="">
+                        <span class="badge d-flex align-items-center gap-1 rounded bg-label-danger">
+                          <span class=" bg-danger border border-light rounded-circle"></span>
+                          High
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card cardChilds mb-2">
+                    <div class="card-header pb-0 d-flex justify-content-between">
+                      <div class="card-title mb-0">
+                        <h6 class="mb-2">High Potential Lead</h6>
+                      </div>
+                    </div>
+                    <div class="card-body pt-0 d-flex justify-content-between ">
+                      <div>
+                        <p class="card-subtitle">Lead Name: Kelly Casper</p>
+                        <p class="card-subtitle">Course: Digital Marketing</p>
+                        <p class="card-subtitle">Last Contacted: 22/04/2024</p>
+                      </div>
+                      <div class="">
+                        <span class="badge d-flex align-items-center gap-1 rounded bg-label-warning">
+                          <span class=" bg-warning border border-light rounded-circle"></span>
+                          Mid
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card cardChilds ">
+                    <div class="card-header pb-0 d-flex justify-content-between">
+                      <div class="card-title mb-0">
+                        <h6 class="mb-2">High Potential Lead</h6>
+                      </div>
+                    </div>
+                    <div class="card-body pt-0 d-flex justify-content-between ">
+                      <div>
+                        <p class="card-subtitle">Lead Name: Kelly Casper</p>
+                        <p class="card-subtitle">Course: Digital Marketing</p>
+                        <p class="card-subtitle">Last Contacted: 22/04/2024</p>
+                      </div>
+                      <div class="">
+                        <span class="badge d-flex align-items-center gap-1 rounded bg-label-warning">
+                          <span class=" bg-warning border border-light rounded-circle"></span>
+                          High
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                </div>
+                <div class="col-lg-4 ">
+                  <div class="card ">
+                    <div class="card-header headerSimilar border-bottom d-flex justify-content-between">
+                      <div class="card-title titleSimilar mb-0">
+                        <h5 class="mb-1">Student v/s Course</h5>
+                      </div>
+                    </div>
+                    <div class="card-body  row">
+                      <div class="dropdown mt-0">
+                        <button class="btn btn-text-secondary rounded-pill text-muted border-0 p-0 " >
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                          <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
+                        </svg>
+                        </button>
+                      </div>
+                      <div class="chart1 mt-0 d-flex justify-content-center align-items-center ">
+                        <img src="./images/chart1.png" alt="">
+                      </div>
+                      
+                      <div class="d-flex departmentsMain flex-column gap-2">
+                        <div class="department d-flex justify-content-between w-100 border-bottom pb-2">
+                          <div class="d-flex gap-2 align-items-center">
+                            <span class=" badge-dot"></span>
+                            <span>Digital Marketing</span>
+                          </div>
+                          <div><span>175</span></div>
+                        </div>
+                        <div class="department d-flex justify-content-between w-100 border-bottom pb-2">
+                          <div class="d-flex gap-2 align-items-center">
+                            <span class=" badge-dot"></span>
+                            <span>UI/UX Design</span>
+                          </div>
+                          <div><span>254</span></div>
+                        </div>
+                        <div class="department d-flex justify-content-between w-100 border-bottom pb-2">
+                          <div class="d-flex gap-2 align-items-center">
+                            <span class=" badge-dot"></span>
+                            <span>React</span>
+                          </div>
+                          <div><span>224</span></div>
+                        </div>
+                        <div class="department d-flex justify-content-between w-100 border-bottom pb-2">
+                          <div class="d-flex gap-2 align-items-center">
+                            <span class=" badge-dot"></span>
+                            <span>Cloud Computing</span>
+                          </div>
+                          <div><span>234</span></div>
+                        </div>
+                        <div class="department d-flex justify-content-between w-100 border-bottom pb-2">
+                          <div class="d-flex gap-2 align-items-center">
+                            <span class=" badge-dot"></span>
+                            <span>Data Science</span>
+                          </div>
+                          <div><span>254</span></div>
+                        </div>
+                        <div class="department d-flex justify-content-between w-100 border-bottom pb-2">
+                          <div class="d-flex gap-2 align-items-center">
+                            <span class=" badge-dot"></span>
+                            <span>Full Stack Developer</span>
+                          </div>
+                          <div><span>200</span></div>
+                        </div>
+                        <div class="department d-flex justify-content-between w-100  pb-2">
+                          <div class="d-flex gap-2 align-items-center">
+                            <span class=" badge-dot"></span>
+                            <span>Essentials</span>
+                          </div>
+                          <div><span>884</span></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="totalBlock border-top p-3">
+                      <div class="d-flex gap-2 justify-content-between">
+                        <span class="totalText">Total of all counterparty
+                          balances
+                        </span>
+                        <a href="#" class="openLink">open <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+                          <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"/>
+                          <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"/>
+                        </svg></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 ">
+                  <div class="card mb-2">
+                    <div class="card-header headerSimilar border-bottom d-flex justify-content-between">
+                      <div class="card-title titleSimilar mb-0">
+                        <h5 class="mb-1">Lead Source</h5>
+                      </div>
+                      
+                    </div>
+                    <div class="card-body">
+                      <div class="chart2 mt-0 d-flex justify-content-center align-items-center ">
+                        <img src="./images/progresschart2.png" class="w-100 h-100" alt="">
+                      </div>
+                    </div>
+                    <div class="totalBlock border-top p-3">
+                      <div class="d-flex gap-2 justify-content-between">
+                        <span class="totalText">Total of all counterparty
+                          balances
+                        </span>
+                        <a href="#" class="openLink">open <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+                          <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"/>
+                          <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"/>
+                        </svg></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card ">
+                    <div class="card-header headerSimilar border-bottom d-flex justify-content-between">
+                      <div class="card-title titleSimilar mb-0">
+                        <h5 class="mb-1">Online v/s Offline</h5>
+                      </div>
+                      
+                    </div>
+                    <div class="card-body">
+                      <div class="chart3 mt-0 d-flex justify-content-center align-items-center ">
+                        <img src="./images/chart3.png" class="w-100 h-100" alt="">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+      </section>
+
+    </main>
+    <script>
+    
+      let navLoad = () =>{
+        event.stopPropagation();
+        $('.mainSideBar').toggleClass('active')
+      }
+      $(window).click(function(e) {
+        $('.mainSideBar').removeClass('active');
+      });
+
+    </script>
+	
+   
+  </body>
+</html>
